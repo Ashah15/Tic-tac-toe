@@ -21,11 +21,26 @@ class TicTacToe
         puts "==========================="
         rol = gets.chomp.to_i
         validate_rol (rol)
+
+        puts "#{@player}, please enter the row:"
+        input_row = gets
+        return false 
+
+         puts "#{@player}, please enter the column:"
+        input_column = gets
+        return false 
+
+        (input_row, input_column)
+
+
+
+
     end
     
     def validate_rol (rol)
         if rol == 1 || rol == 2
             @player = rol
+
             print_board
         else
             puts "Invalid option"
@@ -33,13 +48,26 @@ class TicTacToe
         end
     end
     
-    def valid_move?
+    def valid_move?(input_row, input_column)
+        @board[input_row.-1][input_column.-1].strip.empty?
+       
     end
+
+    def validate_move
+        case turn
+        when 1 puts "X"
+        when 2 puts "int"
+    end        
     
     def update_board
+        @board[inputs[0]-1][inputs[1].-1] = @player
+
     end
     
     def play
+        inputs = get_inputs
+        update_board(inputs)
+
     end
     
     def game_over
