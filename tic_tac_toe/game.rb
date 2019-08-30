@@ -41,33 +41,34 @@ class TicTacToe
         else
             @draw = "O"
         end
-        if @board[@cell-1] == @draw
+        if @board[@cell-1] == "X" || @board[@cell-1] == "O"
             puts "The cell is already taken"
             play
+        else
+            case @cell
+                when 1
+                    @board[0] = @draw
+                when 2
+                    @board[1] = @draw
+                when 3
+                    @board[2] = @draw
+                when 4
+                    @board[3] = @draw
+                when 5
+                    @board[4] = @draw
+                when 6
+                    @board[5] = @draw
+                when 7
+                    @board[6] = @draw
+                when 8
+                    @board[7] = @draw
+                when 9
+                    @board[8] = @draw
+                else
+                    puts "Ivalid Option, please try again!"
+                play
+            end
         end
-        case @cell
-            when 1
-                @board[0] = @draw
-            when 2
-                @board[1] = @draw
-            when 3
-                @board[2] = @draw
-            when 4
-                @board[3] = @draw
-            when 5
-                @board[4] = @draw
-            when 6
-                @board[5] = @draw
-            when 7
-                @board[6] = @draw
-            when 8
-                @board[7] = @draw
-            when 9
-                @board[8] = @draw
-            else
-                puts "Ivalid Option, please try again!"
-        end
-        
         winner?
         game_over?
     end  
@@ -189,8 +190,6 @@ class TicTacToe
                 exit
             end
     end
-    
-   
 end
 
 game = TicTacToe.new(["1","2","3","4","5","6","7","8","9"])
