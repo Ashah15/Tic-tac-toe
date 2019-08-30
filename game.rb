@@ -7,7 +7,7 @@ class TicTacToe
     end
     
     def print_board
-        puts "GOOD LUCK!"
+        puts "START GAME!"
         puts "\n #{@board[0]} | #{@board[1]} | #{@board[2]} "
         puts "-----------"
         puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
@@ -65,7 +65,7 @@ class TicTacToe
             when 9
                 @board[8] = @draw
             else
-                puts "Ivalid Option, please try again!"
+                puts "Invalid Option, please try again!"
         end
         
         winner?
@@ -74,7 +74,7 @@ class TicTacToe
     
     def play
         puts "\nPlayer #{@rol} is playing!"
-        puts "Select the cell with a number from 1 to 9"
+        puts "Select a number in the cell"
         @cell = gets.chomp.to_i
         valid_move?
     end
@@ -185,7 +185,7 @@ class TicTacToe
                 @board=["1","2","3","4","5","6","7","8","9"]
                 get_inputs 
             else 
-                puts "GoodBye!" 
+                puts "Adios Amigo!" 
                 exit
             end
     end
