@@ -1,6 +1,5 @@
 class TicTacToe
-    #attr_accessor :count
-    #$rol = nil
+    
     def initialize (board)
         @board = board
         @rol
@@ -24,21 +23,10 @@ class TicTacToe
         puts "==========================="
         @rol = gets.chomp.to_i
         validate_rol
-
-        #puts "#{@player}, please enter the row:"
-        #input_row = gets
-        #return false 
-
-        #puts "#{@player}, please enter the column:"
-        #input_column = gets
-        #return false 
-
-        #(input_row, input_column)
     end
     
     def validate_rol
         if @rol == 1 || @rol == 2
-            #@player = rol
             print_board
             play
         else
@@ -47,10 +35,6 @@ class TicTacToe
         end
     end
     
-    #def valid_move?(input_row, input_column)
-    #    @board[input_row.-1][input_column.-1].strip.empty?   
-    #end
-
     def valid_move? 
         if @rol == 1
             @draw = "X"
@@ -89,8 +73,6 @@ class TicTacToe
     end  
     
     def play
-        #inputs = get_inputs
-        #update_board(inputs)
         puts "\nPlayer #{@rol} is playing!"
         puts "Select the cell with a number from 1 to 9"
         @cell = gets.chomp.to_i
@@ -204,6 +186,7 @@ class TicTacToe
                 get_inputs 
             else 
                 puts "GoodBye!" 
+                exit
             end
     end
     
