@@ -66,6 +66,7 @@ class TicTacToe
                     @board[8] = @draw
                 else
                     puts "Invalid Option, please try again!"
+                play
             end
         end
         winner?
